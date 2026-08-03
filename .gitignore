@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+.env
+.env.local
+.env.*.local
+
+.DS_Store
+*.log
+
+# 開発メモ・仕様書（README 以外のドキュメントは公開しない）
+CLAUDE.md
+SUBMISSION.md
+diary_app_spec.md
+改善案.md
+最終課題企画書.pdf

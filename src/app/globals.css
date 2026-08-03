@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    /* 紙のトーン。グラデーション背景は使わない。 */
+  }
+
+  /* フォーカスは常に見える形で。アクセントは藍のみ。 */
+  :focus-visible {
+    outline: 2px solid theme("colors.ai");
+    outline-offset: 1px;
+  }
+
+  ::selection {
+    background: theme("colors.s2");
+  }
+}
+
+@layer components {
+  /* 罫線で区切るのが基本レイアウト単位 */
+  .rule-t {
+    @apply border-t border-rule;
+  }
+  .rule-b {
+    @apply border-b border-rule;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 border border-rule-strong bg-paper px-3 py-1.5 text-sm text-ink transition-colors;
+  }
+  .btn:hover {
+    @apply bg-ai-weak;
+  }
+  .btn:disabled {
+    @apply cursor-not-allowed border-rule text-ink-3;
+  }
+  .btn:disabled:hover {
+    @apply bg-paper;
+  }
+  .btn-primary {
+    @apply border-ai bg-ai text-paper;
+  }
+  .btn-primary:hover {
+    @apply bg-ai-ink;
+  }
+
+  .num {
+    @apply font-mono tabular-nums;
+  }
+
+  /* Markdown プレビュー。装飾は最小限、区切りは罫線。 */
+  .md h1,
+  .md h2,
+  .md h3 {
+    @apply mb-2 mt-4 font-bold leading-snug;
+  }
+  .md h1 {
+    @apply text-lg;
+  }
+  .md h2 {
+    @apply text-base;
+  }
+  .md h3 {
+    @apply text-sm;
+  }
+  .md p {
+    @apply my-2 leading-7;
+  }
+  .md ul {
+    @apply my-2 list-disc pl-5;
+  }
+  .md ol {
+    @apply my-2 list-decimal pl-5;
+  }
+  .md li {
+    @apply my-0.5;
+  }
+  .md a {
+    @apply text-ai underline underline-offset-2;
+  }
+  .md blockquote {
+    @apply my-2 border-l-2 border-rule-strong pl-3 text-ink-2;
+  }
+  .md code {
+    @apply bg-ai-weak px-1 py-0.5 font-mono text-[0.85em];
+  }
+  .md pre {
+    @apply my-2 overflow-x-auto border border-rule p-3;
+  }
+  .md pre code {
+    @apply bg-transparent p-0;
+  }
+  .md hr {
+    @apply my-4 border-rule;
+  }
+  .md table {
+    @apply my-2 w-full border-collapse text-sm;
+  }
+  .md th,
+  .md td {
+    @apply border border-rule px-2 py-1 text-left;
+  }
+}

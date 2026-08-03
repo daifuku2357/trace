@@ -1,0 +1,18 @@
+{
+  "name": "Trace",
+  "short_name": "Trace",
+  "description": "日記の継続を通じて、感情・行動・目標の推移を可視化する。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9F6",
+  "theme_color": "#FAF9F6",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
